@@ -34,15 +34,15 @@ rm -rf $RPM_BUILD_ROOT
 %{__install} --mode=755 qdu $RPM_BUILD_ROOT%{_bindir}
 
 (cd $RPM_BUILD_ROOT
-mkdir -p .%{_menudir}
-cat > .%{_menudir}/%{name} <<EOF
-?package(%{name}):\
-command="%{_bindir}/%{name}"\
-icon="monitoring_section.png"\
-title="Qdu"\
-longtitle="Graphical Disk Usage"\
-needs="x11"\
-section="System/Monitoring"
+mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications/
+cat << EOF > %buildroot%{_datadir}/applications/mandriva-%{name}.desktop
+[Desktop Entry]
+Type=Application
+Exec=%{_bindir}/%{name}
+Icon=monitoring_section
+Name=Qdu
+Comment=Graphical Disk Usage
+Categories=System;Monitor;
 EOF
 )
 
@@ -59,5 +59,5 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(-,root,root)
 %doc CHANGELOG INSTALL LICENCE README
 %{_bindir}/*
-%{_menudir}/%name
+%{_datadir}/applications/mandriva-%name.desktop
 
