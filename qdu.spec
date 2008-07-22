@@ -1,6 +1,6 @@
 %define name qdu
 %define version 2.2
-%define release %mkrel 3
+%define release %mkrel 4
 
 Summary:	Graphical Disk Usage
 Name:		%name
