@@ -11,6 +11,7 @@ Group:		Monitoring
 Source:		http://artis.imag.fr/Membres/Gilles.Debunne/Code/QDU/qdu.tar.gz
 URL:		https://artis.imag.fr/Membres/Gilles.Debunne/Code/QDU/
 Buildroot:      %{_tmppath}/%{name}-%{version}-buildroot
+BuildRequires:	make
 BuildRequires:  libqt-devel
 Provides:	Xdu
 Obsoletes:	Xdu
